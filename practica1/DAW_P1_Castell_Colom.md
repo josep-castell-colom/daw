@@ -29,7 +29,7 @@ Inicia una sesión en Windows con un usuario con privilegios de administrador.
 
 > Al igual que en la anterior pregunta se ha usado un comando distinto; en este caso `netstat -aupn`, `-u` = 'UDP'.
 
-> Observando todos los puertos 'UDP' vemos como ninguno de ellos indica que esté a la escucha:
+> Observando todos los puertos UDP vemos como ninguno de ellos indica que esté a la escucha:
 
 <img src="./actividad1/netstat-aupn.png"/>
 
@@ -63,7 +63,7 @@ Muestra las conexiones TCP establecidas con el comando `netstat –p TCP –n`.
 
 <img src="./actividad1/resolvectl-status-nslookup.png"/>
 
-5. Realiza la resolución inversa de la IP 62.42.63.52, obteniendo el nombre del servidor DNS con el comando `nslookup`.
+5. Realiza la resolución inversa de la IP `62.42.63.52`, obteniendo el nombre del servidor DNS con el comando `nslookup`.
 
 > La dirección obtenida es: '**resolv2.ono.com**':
 
