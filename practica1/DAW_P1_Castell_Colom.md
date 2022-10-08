@@ -37,7 +37,7 @@ Inicia una sesión en Windows con un usuario con privilegios de administrador.
 
 <img src="./actividad1/netstat-lupn.png"/>
 
-> Estos son el :47262, :53, :631, :5353, :546 y :58314.
+> Estos son el `:47262`, `:53`, `:631`, `:5353`, `:546` y `:58314`.
 
 3. Abre el navegador y accede a una web de internet:
 
