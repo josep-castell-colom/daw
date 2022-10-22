@@ -21,7 +21,7 @@ Inicia una sesión en Windows con un usuario con privilegios de administrador.
 
 > Debido a que el sistema operativo es Ubuntu se ha usado el comando `netstat -atpn` donde `-a` = 'all', `-t` = 'TCP', `-p` = 'program' y `-n` = 'numeric address'.
 
-> Los puertos TCP a la escucha son el `:53`, el `:631`, el `:80`, el `:43973` y el `:51896`.
+> Los puertos TCP a la escucha son el `:53`, el `:631`, el `:80`, el `:43973` y el `:64120`.
 
 <img src="./actividad1/netstat-atpn-nofirefox.png"/>
 
@@ -59,7 +59,7 @@ Muestra las conexiones TCP establecidas con el comando `netstat –p TCP –n`.
 
 <img src="./actividad1/nslookup.png"/>
 
-> Debido a ello es necesario un primer comando que nos informa de la IP del servidor DNS predeterminado (`resolvectl status`), con el cual obtenemos la IP `8.8.4.4` con la cual si realizamos la resolución inversa nos devuelve la URL del servidor: '**dns.google**'.
+> Debido a ello es necesario un primer comando que nos informa de la IP del servidor DNS predeterminado (`resolvectl status`), con el cual obtenemos la IP `8.8.4.4` con la cual si realizamos la resolución inversa con `nslookup` (`nslookup 8.8.4.4`) nos devuelve la URL del servidor: '**dns.google**'.
 
 <img src="./actividad1/resolvectl-status-nslookup.png"/>
 
@@ -108,7 +108,7 @@ evidencias\*:
 
 5. ¿Qué ha ocurrido con la respuesta del servidor? (Adquiere o no adquiere lo que solicita)
 
-> Según el punto de vista se puede decir que adquiere lo que solicita o que no debido a que lo que se recibe es una redirección (estado 301: movido permanentemente); por lo tanto, se adquiere lo que solicita después de ser redirigido pero no en esta petición en concreto (en este caso el estado deberia ser 200: OK).
+> Según el punto de vista se puede decir que adquiere lo que solicita o que no debido a que lo que se recibe es una redirección (estado 301: movido permanentemente); por lo tanto, adquiere lo que solicita después de ser redirigido pero no en esta petición en concreto (en este caso el estado debería ser 200: OK).
 
 \* A continuación se incluyen las capturas de pantalla de la comunicación DNS Y TCP/HTTP y una breve explicación del establecimiento de la comunicación y su cierre.
 
