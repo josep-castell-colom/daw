@@ -72,7 +72,7 @@ entre el usuario windows y la vm, mediante los el comando ping entre windows y v
 la vm y windows. Activa la VM Ubuntu server y abre un navegador web en el usuario
 windows y accede a la dirección web del Ubuntu Server. Pon capturas del proceso.
 
-### 1. Configuración de la red
+### 2.1. Configuración de la red
 
 En este apartado se explicará la configuración de la red interna previa a la inicialización de la máquina. Para ello se seguirán los pasos detallados a continuación:
 
@@ -87,7 +87,7 @@ En este apartado se explicará la configuración de la red interna previa a la i
 - Vemos como en 'Nombre' aparece el nombre de la red de anfitrión que creamos en el paso 1.
 - 'Aceptar'.
 
-### 2. Inicialización de la máquina virtual y configuración del sistema operativo
+### 2.2. Inicialización de la máquina virtual y configuración del sistema operativo
 
 Como la instalación de Ubuntu Server es bastante sencilla, se expondrá a continuación un breve resumen de los pasos haciendo hincapié en aquellos donde sea necesario una configuración personalizada.
 
@@ -101,7 +101,7 @@ Como la instalación de Ubuntu Server es bastante sencilla, se expondrá a conti
   <img src="./virtual-box-iniciar-ubuntu-server.png" class="medium-img rounded-border" />
 </div>
 
-3. Seleccionar la opción '*Try or Install Ubuntu Server*'. Se iniciará el sistema operativo.
+3. Seleccionar la opción '*Try or Install Ubuntu Server*'. Se iniciará la configuración del sistema operativo.
 
 4. Las siguientes opciones son relativas al idioma del sistema y configuración del teclado.
 
@@ -120,11 +120,11 @@ Como la instalación de Ubuntu Server es bastante sencilla, se expondrá a conti
 
 <div class="page-break"></div>
 
-### 3. Comprobación de la conectividad *host-VM*
+### 2.3. Comprobación de la conectividad *host-VM*
 
 1. Para finalizar esta parte del ejercicio se debe obtener la dirección IP interna de la máquina virtual con el comando `ip -4 addr`. La encontraremos en la sección con el nombre de la red de anfitrión creada en **Virtual Box** (en nuestro caso 'vboxnet0') precedida por `inet`.
 
-> 3: vboxnet0: <BROADCAST,MULTICAST,UP,LOWER_UP> mtu 1500 qdisc fq_codel state UP group default qlen 1000  
+    > 3: vboxnet0: <BROADCAST,MULTICAST,UP,LOWER_UP> mtu 1500 qdisc fq_codel state UP group default qlen 1000  
   inet 192.168.57.3/24 brd 192.168.57.255 scope global vboxnet0
        valid_lft forever preferred_lft forever
 
@@ -163,8 +163,18 @@ Como la instalación de Ubuntu Server es bastante sencilla, se expondrá a conti
 
 <img src="./apache.png" class="center" />
 
+<div class="page-break"></div>
+
 ## 3. Captura de paquetes con Wireshark
 
 Abre el Wireshark e inicia la captura de paquetes. Repite el proceso anterior y
 después finaliza de caputar paquetes en el Wireshark. Busca los paquetes
 correspondientes al tráfico entre el usuario Windows y la VM.
+
+1. Para capturar los paquetes transmitidos entre la máquina anfitrión y la máquina virtual primero hay que cerrar el navegador de internet y abrir la aplicación **Wireshark**.
+
+2. Como hay que capturar los paquetes de la red interna hay que apagar la red Wi-Fi externa de la máquina anfitrión y empezar la captura de paquetes con **Wireshark**. 
+
+3. Posteriormente, se abre una nueva ventana del navegador y se introduce de nuevo la dirección IP de la máquina virtual. Cuando se haya cargado nuevamente la página de bienvenida de **Apache** hay que parar la captura de paquetes de **Wireshark**. Y ya se puede observar todo el tráfico entre las dos máquinas:
+
+<img src="./wireshark-host-vm.png" class="center" />
